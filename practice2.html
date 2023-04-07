@@ -1,0 +1,40 @@
+<html>
+
+	<head>
+		<style>
+      			#paragraphToAlter {
+        		border-style: solid;
+        		border-width: 10;
+        		border-color: rgb(0,0,0);
+        		background-color: rgb(255,255,255);
+        		color: black;
+        		font-size: 18pt;
+      			}
+    		</style>
+	</head>
+
+	<body>
+		<h1>EECS 348 Lab_7 Practice #2</h1>
+    		<div id = "paragraphToAlter">Use the form to alter this paragraph!</div>
+    		<form>
+      			Border R(0-255): <input type = "text" id = "borderR"> <br>
+      			Border G(0-255): <input type = "text" id = "borderG"> <br>
+      			Border B(0-255): <input type = "text" id = "borderB"> <br>
+      			Border Width: <input type = "text" id = "borderW"> <br>
+      			Background R(0-255): <input type = "text" id = "backgroundR"> <br>
+      			Background G(0-255): <input type = "text" id = "backgroundG"> <br>
+      			Background B(0-255): <input type = "text" id = "backgroundB"> <br>
+    		</form>
+    		<button onclick=changeParagraph()>Alter paragraph!</button>
+    		<script>
+      			function changeParagraph() {
+        			let paragraph = document.getElementById('paragraphToAlter');
+        			let form = document.querySelector("form")
+        			paragraph.style.borderColor = "rgb(" + form.elements.borderR.value + "," + form.elements.borderG.value + "," + form.elements.borderB.value + ")";
+        			paragraph.style.borderWidth = form.elements.borderW.value;
+        			paragraph.style.backgroundColor = "rgb(" + form.elements.backgroundR.value + "," + form.elements.backgroundG.value + "," + form.elements.backgroundB.value + ")";
+      			}
+    		</script>
+	</body>
+
+</html>

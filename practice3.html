@@ -1,0 +1,29 @@
+<html>
+	<head>
+	</head>
+	<body>
+	<h1>EECS 348 Lab_7 Practice #3</h1>
+	<form>
+		First Password: <input type = "text" id = "firstPassword"> <br>
+		Second Password: <input type = "text" id = "secondPassword"> <br>
+	</form>
+	<button onclick = validatePassword()>Validate Your Password</button>
+	<p></p>
+	<script>
+		let form = document.querySelector("form");
+		function validatePassword() {
+			let firstPassword = document.getElementById("firstPassword").value;
+			let secondPassword = document.getElementById("secondPassword").value;
+			if (firstPassword.length < 8) {
+				alert("First password less than 8 characters");
+			} else if (secondPassword.length < 8) {
+				alert("Second password less than 8 characters");
+			} else if (firstPassword != secondPassword) {
+				alert("Passwords do not match");
+			} else {
+				alert("Valid password");
+			}
+		}
+	</script>
+	</body>
+</html>
